@@ -31,24 +31,34 @@
     <%= form.text_field :email, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :hotel_id %>
-    <%= form.text_field :hotel_id, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
+  <% if !params[:hotel_id].blank? %>
+    <%= form.hidden_field :hotel_id, value: params[:hotel_id] %>
+  <% else %>
+    <div class="my-5">
+      <%= form.label :hotel_id %>
+      <%= form.text_field :hotel_id, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    </div>
+  <% end %>
 
   <div class="my-5">
     <%= form.label :arrival_date %>
-    <%= form.date_field :arrival_date, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.date_field :arrival_date,
+                        class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",
+                        value: params[:arrival_date] %>
   </div>
 
   <div class="my-5">
     <%= form.label :departure_date %>
-    <%= form.date_field :departure_date, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.date_field :departure_date,
+                        class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",
+                        value: params[:departure_date] %>
   </div>
 
   <div class="my-5">
     <%= form.label :no_of_rooms %>
-    <%= form.number_field :no_of_rooms, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.number_field :no_of_rooms,
+                          class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",
+                          value: params[:no_of_rooms] %>
   </div>
 
   <div class="inline">

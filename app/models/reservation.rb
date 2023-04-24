@@ -15,10 +15,14 @@ class Reservation < ApplicationRecord
   private
 
   def arrival_before_departure
-    errors.add(:arrival_date, "can't be after the departure date")
+    if arrival_date.present? && departure_date.present? && arrival_date > departure_date
+      errors.add(:arrival_date, "can't be after departure date")
+    end
   end
 
   def arrival_not_in_the_past
-    errors.add(:arrival_date, "can't be in the past")
+    if arrival_date.present? && arrival_date < Date.today
+      errors.add(:arrival_date, "can't be in the past")
+    end
   end
 end

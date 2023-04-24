@@ -30,10 +30,12 @@
           <%= hotel.room_price %>
         </p>
 
-        <a href="/reservations/new/<%= hotel.id %>/"
-           class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-          Book this hotel
-        </a>
+        <%= link_to "Book this hotel", new_reservation_path(
+          hotel_id: hotel.id,
+          arrival_date: params[:arrival_date],
+          departure_date: params[:departure_date],
+          no_of_rooms: params[:no_of_rooms],
+        ), class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
       </div>
     <% end %>
   </div>
