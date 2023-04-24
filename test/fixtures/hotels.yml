@@ -1,13 +1,61 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  city: MyString
-  number_of_rooms: 1
-  room_price: 9.99
+  name: "Comfort Hotell"
+  city: "Oslo"
+  number_of_rooms: 14
+  room_price: 899
 
 two:
-  name: MyString
-  city: MyString
-  number_of_rooms: 1
-  room_price: 9.99
+  name: "Quality Hotell"
+  city: "Oslo"
+  number_of_rooms: 256
+  room_price: 1500
+
+three:
+  name: "Clarion Hotell"
+  city: "Oslo"
+  number_of_rooms: 2
+  room_price: 1499
+
+four:
+  name: "Scandic Hotell"
+  city: "Oslo"
+  number_of_rooms: 123
+  room_price: 500
+
+five:
+  name: "Thon Hotell"
+  city: "Oslo"
+  number_of_rooms: 456
+  room_price: 1000
+
+six:
+  name: "Comfort Hotell"
+  city: "Bergen"
+  number_of_rooms: 912
+  room_price: 1000
+
+seven:
+    name: "Quality Hotell"
+    city: "Bergen"
+    number_of_rooms: 123
+    room_price: 1500
+
+eight:
+    name: "Clarion Hotell"
+    city: "Bergen"
+    number_of_rooms: 123
+    room_price: 1499
+
+nine:
+    name: "Scandic Hotell"
+    city: "Bergen"
+    number_of_rooms: 123
+    room_price: 500
+
+ten:
+    name: "Thon Hotell"
+    city: "Bergen"
+    number_of_rooms: 123
+    room_price: 1000

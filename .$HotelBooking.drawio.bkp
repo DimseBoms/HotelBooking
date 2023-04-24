@@ -1,4 +1,4 @@
-<mxfile host="Electron" modified="2023-04-23T20:51:36.051Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="zbMSlT9nDihC6_y2H1Cz" version="21.1.2" type="device">
+<mxfile host="Electron" modified="2023-04-23T20:52:19.106Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="1EEAu3D3ckhgATAIquFy" version="21.1.2" type="device">
   <diagram name="Page-1" id="pYvq-vX6GnEvEB65DK_F">
     <mxGraphModel dx="1674" dy="839" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -7,7 +7,7 @@
         <mxCell id="oZKA1-QXbNRFvbVQeCIY-1" value="&lt;b&gt;Hotels&lt;br&gt;&lt;/b&gt;id: &lt;b&gt;Integer&lt;/b&gt;&lt;br&gt;name: &lt;b&gt;String&lt;/b&gt;&lt;br&gt;city: &lt;b&gt;String&lt;/b&gt;&lt;br&gt;number_of_rooms: &lt;b&gt;Integer&lt;/b&gt;&lt;br&gt;room_price: &lt;b&gt;Decimal&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="130" y="50" width="170" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="eyGchQwbvZeP4NuVjU3E-1" value="&lt;b&gt;Reservation&lt;/b&gt;&lt;br&gt;first_name: &lt;b&gt;String&lt;/b&gt;&lt;br&gt;last_name: &lt;b&gt;String&lt;/b&gt;&lt;br&gt;phone: &lt;b&gt;String&lt;/b&gt;&lt;br&gt;email: &lt;b&gt;String&lt;/b&gt;&lt;br&gt;hotel_id: &lt;b&gt;Integer&lt;/b&gt;&lt;br&gt;arrival_date: &lt;b&gt;Date&lt;/b&gt;&lt;br&gt;departure_date: &lt;b&gt;Date&lt;/b&gt;&lt;br&gt;no_of_rooms: &lt;b&gt;Integer&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="eyGchQwbvZeP4NuVjU3E-1" value="&lt;b&gt;Reservation&lt;/b&gt;&lt;br&gt;first_name: &lt;b&gt;String&lt;/b&gt;&lt;br&gt;last_name: &lt;b&gt;String&lt;/b&gt;&lt;br&gt;phone: &lt;b&gt;String&lt;/b&gt;&lt;br&gt;email: &lt;b&gt;String&lt;/b&gt;&lt;br&gt;hotel_id: &lt;b&gt;Integer&lt;/b&gt;&lt;br&gt;arrival_date: &lt;b&gt;Date&lt;/b&gt;&lt;br&gt;departure_date: &lt;b&gt;Date&lt;/b&gt;&lt;br&gt;no_of_rooms: &lt;b&gt;Integer&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="430" y="40" width="170" height="140" as="geometry" />
         </mxCell>
       </root>

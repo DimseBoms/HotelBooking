@@ -57,6 +57,36 @@ class ReservationsController < ApplicationController
     end
   end
 
+  def search
+    render :search
+  end
+
+  def book
+    render :book
+  end
+
+  def search_results
+    puts "Searching for hotels in #{params[:city]}"
+    puts params
+    # Convert numbered params to numbers
+    params[:no_of_rooms] = params[:no_of_rooms].to_i
+    params[:max_price] = params[:max_price].to_i
+    # Filter hotels by city
+    @hotels = Hotel.where("LOWER(city) = ?", params[:city].downcase)
+    # Find hotels that are available between the arrival and departure dates
+    if params[:arrival_date] && params[:departure_date]
+      @available_hotels = []
+      @hotels.each do |hotel|
+        # Add the hotel to available_hotels if it has enough rooms and the max price is less than hotel.room_price
+        if params[:no_of_rooms] < hotel.available_rooms(params[:arrival_date], params[:departure_date]) && params[:max_price] >= hotel.room_price
+          @available_hotels << hotel
+        end
+      end
+      @hotels = @available_hotels
+    end
+    render :search_results
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_reservation

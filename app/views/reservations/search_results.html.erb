@@ -1,0 +1,33 @@
+<div class="flex-col justify-between items-center mx-auto">
+  <h1 class="text-2xl font-bold mb-3 text-center">Search results</h1>
+  <div id="search_results" class="min-w-full flex space-x-4 space-y-4">
+    <% @hotels.each do |hotel| %>
+      <div class="bg-gray-100 rounded-lg px-4 py-4">
+        <p class="my-5">
+          <strong class="block font-medium mb-1">Name:</strong>
+          <%= hotel.name %>
+        </p>
+
+        <p class="my-5">
+          <strong class="block font-medium mb-1">City:</strong>
+          <%= hotel.city %>
+        </p>
+
+        <p class="my-5">
+          <strong class="block font-medium mb-1">Number of rooms:</strong>
+          <%= hotel.number_of_rooms %>
+        </p>
+
+        <p class="my-5">
+          <strong class="block font-medium mb-1">Room price:</strong>
+          <%= hotel.room_price %>
+        </p>
+
+        <a href="/reservations/book/<%= hotel.id %>"
+           class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          Book this hotel
+        </a>
+      </div>
+    <% end %>
+  </div>
+</div>
