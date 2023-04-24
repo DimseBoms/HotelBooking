@@ -40,26 +40,38 @@
     </div>
   <% end %>
 
-  <div class="my-5">
-    <%= form.label :arrival_date %>
-    <%= form.date_field :arrival_date,
-                        class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",
-                        value: params[:arrival_date] %>
-  </div>
-
-  <div class="my-5">
-    <%= form.label :departure_date %>
-    <%= form.date_field :departure_date,
-                        class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",
-                        value: params[:departure_date] %>
-  </div>
-
-  <div class="my-5">
-    <%= form.label :no_of_rooms %>
-    <%= form.number_field :no_of_rooms,
+  <% if !params[:arrival_date.blank?] %>
+    <%= form.hidden_field :arrival_date, value: params[:arrival_date] %>
+  <% else %>
+    <div class="my-5">
+      <%= form.label :arrival_date %>
+      <%= form.date_field :arrival_date,
                           class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",
-                          value: params[:no_of_rooms] %>
-  </div>
+                          value: params[:arrival_date] %>
+    </div>
+  <% end %>
+
+  <% if !params[:departure_date.blank?] %>
+    <%= form.hidden_field :departure_date, value: params[:departure_date] %>
+  <% else %>
+    <div class="my-5">
+      <%= form.label :departure_date %>
+      <%= form.date_field :departure_date,
+                          class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",
+                          value: params[:departure_date] %>
+    </div>
+  <% end %>
+
+  <% if !params[:no_of_rooms.blank?] %>
+    <%= form.hidden_field :no_of_rooms, value: params[:no_of_rooms] %>
+  <% else %>
+    <div class="my-5">
+      <%= form.label :no_of_rooms %>
+      <%= form.number_field :no_of_rooms,
+                            class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",
+                            value: params[:no_of_rooms] %>
+    </div>
+  <% end %>
 
   <div class="inline">
     <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>

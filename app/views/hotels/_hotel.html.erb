@@ -15,13 +15,25 @@
   </p>
 
   <p class="my-5">
+    <strong class="block font-medium mb-1">Occupied rooms today:</strong>
+    <%= hotel.occupied_rooms %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Reservations:</strong>
+    <%= hotel.reservations.size %>
+
+  </p>
+
+  <p class="my-5">
     <strong class="block font-medium mb-1">Room price:</strong>
     <%= hotel.room_price %>
   </p>
 
   <% if action_name != "show" %>
-    <%= link_to "Show this hotel", hotel, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Show this hotel", hotel, class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
     <%= link_to 'Edit this hotel', edit_hotel_path(hotel), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Show reservations', hotel_reservations_path(hotel), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
     <hr class="mt-6">
   <% end %>
 </div>

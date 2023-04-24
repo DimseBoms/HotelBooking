@@ -57,6 +57,12 @@ class HotelsController < ApplicationController
     end
   end
 
+  def reservations
+    @hotel = Hotel.find(params[:id])
+    @reservations = @hotel.reservations
+    redirect_to hotel_reservations_path(@hotel)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_hotel

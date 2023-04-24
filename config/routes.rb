@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :reservations
-  resources :hotels
+  resources :hotels do
+    resources :reservations
+  end
 
   get "/search_results", to: "reservations#search_results"
 

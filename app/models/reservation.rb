@@ -11,6 +11,7 @@ class Reservation < ApplicationRecord
   validates :no_of_rooms, presence: true
   validate :arrival_not_in_the_past
   validate :arrival_before_departure
+  validate :hotel_not_full
 
   private
 
@@ -23,6 +24,16 @@ class Reservation < ApplicationRecord
   def arrival_not_in_the_past
     if arrival_date.present? && arrival_date < Date.today
       errors.add(:arrival_date, "can't be in the past")
+    end
+  end
+
+  def hotel_not_full
+    puts "Starting hotel_not_full validation"
+    if hotel_id.present?
+      puts "Checking if hotel is full"
+      if no_of_rooms > hotel.available_rooms(arrival_date, departure_date)
+        errors.add(:no_of_rooms, "can't be greater than available rooms")
+      end
     end
   end
 end

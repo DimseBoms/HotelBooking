@@ -3,7 +3,13 @@ class ReservationsController < ApplicationController
 
   # GET /reservations or /reservations.json
   def index
-    @reservations = Reservation.all
+    # Filters reservations by hotel_id if the hotel_id parameter is present.
+    # it is in the /hotels/:hotel_id/reservations route.
+    if !params[:hotel_id].blank?
+      @reservations = Hotel.find(params[:hotel_id]).reservations
+    else
+      @reservations = Reservation.all
+    end
   end
 
   # GET /reservations/1 or /reservations/1.json
