@@ -1,3 +1,10 @@
+<div>
+    <% if notice.present? %>
+      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+    <% end %>
+    <%= link_to "Search again", root_path, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+</div>
+
 <div class="flex-col justify-between items-center mx-auto">
   <h1 class="text-2xl font-bold mb-3 text-center">Search results</h1>
   <div id="search_results" class="min-w-full flex space-x-4 space-y-4">
@@ -23,7 +30,7 @@
           <%= hotel.room_price %>
         </p>
 
-        <a href="/reservations/book/<%= hotel.id %>"
+        <a href="/reservations/new/<%= hotel.id %>/"
            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
           Book this hotel
         </a>

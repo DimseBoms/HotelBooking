@@ -66,6 +66,26 @@ class ReservationsController < ApplicationController
   end
 
   def search_results
+    if params[:city].blank? || params[:arrival_date].blank? || params[:departure_date].blank? || params[:no_of_rooms].blank? || params[:max_price].blank?
+      redirect_to root_url, notice: "Please fill in all the fields"
+      return
+    end
+    if params[:arrival_date] > params[:departure_date]
+      redirect_to root_url, notice: "Arrival date must be before departure date"
+      return
+    end
+    if params[:no_of_rooms].to_i <= 0
+      redirect_to root_url, notice: "Number of rooms must be greater than 0"
+      return
+    end
+    if params[:max_price].to_i <= 0
+      redirect_to root_url, notice: "Max price must be greater than 0"
+      return
+    end
+    if Date.parse(params[:arrival_date]) < Date.today
+      redirect_to root_url, notice: "Arrival date cannot be in the past"
+      return
+    end
     puts "Searching for hotels in #{params[:city]}"
     puts params
     # Convert numbered params to numbers
@@ -78,7 +98,7 @@ class ReservationsController < ApplicationController
       @available_hotels = []
       @hotels.each do |hotel|
         # Add the hotel to available_hotels if it has enough rooms and the max price is less than hotel.room_price
-        if params[:no_of_rooms] < hotel.available_rooms(params[:arrival_date], params[:departure_date]) && params[:max_price] >= hotel.room_price
+        if params[:no_of_rooms] <= hotel.available_rooms(params[:arrival_date], params[:departure_date]) && params[:max_price] >= hotel.room_price
           @available_hotels << hotel
         end
       end
